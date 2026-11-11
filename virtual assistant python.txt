@@ -1,0 +1,81 @@
+import random
+import time
+score = 0
+
+login = 'gut0'
+user_login = input('Seu login: ')
+if user_login.lower() == 'zloody':
+    print('Dá o fora, você não é bem vindo')
+elif user_login.lower() == login:
+    print('Bem-vindo, criador! Há algo que você gostaria de mudar?')
+elif user_login.lower() != login:
+    print('Bem-vindo,', user_login,'!')
+    command = input('Por favor, escolha um comando (texto, sorteio, quiz)')
+
+    
+    if command == "texto":
+        print("Bem vindo ao jogo das portas!")
+        porta = int(input("Qual porta você escolhe: 1, 2 ou 3?"))
+        if porta == 1:
+            print("Você entra numa sala com um tigre dentro e morre D:")
+        elif porta == 2:
+            print("Você entra numa sala com 1 milhão de dolares :D")
+        elif porta == 3:
+            print("Você entra numa sala com lava dentro e morre D:")
+
+    
+    elif command == "sorteio":
+        print("Bem vindo ao sorteio!")
+        number = int(input("escolha um numero de 1 a 5!"))
+        number2 = random.randint(1, 5)
+        
+        if number == number2:
+            print("Você acertou :D")
+            print("O numero sorteado foi", number2)
+
+        else:
+            print("Você errou D:")
+            print("O numero sorteado foi", number2)
+
+
+    if command == "quiz":
+        print("Vem vindo ao quiz do Tenna,", user_login + "!!")
+        print("Se prepare para as responder perguntas mais diverdas de qualquer canal de TV!!")
+        print("Tente fazer o maximo de pontos possivel!")
+        print("Ok, agora podemos começar!! esta na hora da TV!!")
+
+        #quiz
+
+        p1 = input("Qual é a capital da frança?").lower()
+        if p1 == "paris":
+            print("Essa foi facil")
+            score += 500
+        else:
+            print("Que pena, você errou!")
+        p2 = input("Qual é a comida favorita do Kris?").lower()
+        if p2 == "torta":
+            print("Isso mesmo!")
+            score += 500
+        else:
+            print("Errado, tente melhor na proxima")
+        p3 = input("Qual é o nome do meu ajudante de produção?").lower()
+        if p3 == "mike":
+            print("Certo, mas a proxima vai ser mais dificil!")
+            score += 500
+        else: print("Não é")
+        print("Qual nome do trio da lenda de DELTARUNE:")
+        p4 = input("Qual nome do lider emo azul?").lower()
+        p5 = input("Qual nome da menina dinossauro?").lower()
+        p6 = input("Qual nome do garoto cabra treviano?").lower()
+        if p4 == "kris" and p5 == "susie" and p6 == "ralsei":
+            print("Boa!!! você acertou!!!")
+            score += 1500
+        else: print("pelo menos você tentou...")
+        
+        #conclusão
+        print("Fim do quiz")
+        print("Você conseguiu", score, "pontos!!")
+        if score >= 1500:
+            print("Parabens!!")
+        else:
+            print("Que vergonha!")
